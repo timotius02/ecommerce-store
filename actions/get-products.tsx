@@ -14,7 +14,7 @@ export default async function getProducts(query: Query): Promise<Product[]> {
   const url = qs.stringifyUrl({
     url: apiURL,
     query: {
-      colorID: query.colorId,
+      colorId: query.colorId,
       sizeId: query.sizeId,
       categoryId: query.categoryId,
       isFeatured: query.isFeatured,

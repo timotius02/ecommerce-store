@@ -5,6 +5,7 @@ import Image from "next/image";
 import IconButton from "./icon-button";
 import { Expand, ShoppingCart } from "lucide-react";
 import Currency from "./currency";
+import Link from "next/link";
 
 interface ProductCardProps {
   data: Product;
@@ -12,7 +13,10 @@ interface ProductCardProps {
 
 export default function ProductCard({ data }: ProductCardProps) {
   return (
-    <div className="bg-white group cursor-pointer rounded-xl border p-3 space-y-4">
+    <Link
+      href={`/product/${data.id}`}
+      className="bg-white group cursor-pointer rounded-xl border p-3 space-y-4"
+    >
       {/* Images and Actions */}
       <div className="aspect-square rounded-xl bg-gray-100 relative">
         <Image
@@ -43,6 +47,6 @@ export default function ProductCard({ data }: ProductCardProps) {
       <div className="flex items-center justify-between">
         <Currency value={data.price} />
       </div>
-    </div>
+    </Link>
   );
 }
